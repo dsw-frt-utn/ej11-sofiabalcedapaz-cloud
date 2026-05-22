@@ -83,18 +83,30 @@ internal class Ejemplos
         Console.WriteLine($"Promedio Precios: {caso.GetPromedioPrecios():C}");
 
         Console.WriteLine("\nLibros con id mayor a 15");
-        caso.GetListById().ForEach(l => Console.WriteLine(l.Titulo));
+        foreach (var libro in caso.GetListById())
+        {
+            Console.WriteLine(libro.Titulo);
+        }
 
         Console.WriteLine("\nTítulos y precios");
-        caso.GetLibros().ForEach(Console.WriteLine);
+        foreach (var texto in caso.GetLibros())
+        {
+            Console.WriteLine(texto);
+        }
 
         Console.WriteLine($"\nMayor precio: {caso.GetMayorPrecio()}");
         Console.WriteLine($"\nMenor precio: {caso.GetMenorPrecio()}");
 
         Console.WriteLine("\nLibros con precio mayor al promedio");
-        caso.GetMayorPromedio().ForEach(l => Console.WriteLine(l.Titulo));
+        foreach (var libro in caso.GetMayorPromedio())
+        {
+            Console.WriteLine(libro.Titulo);
+        }
 
         Console.WriteLine("\nLibros ordenados por título descendente");
-        caso.GetOrdenadosPorTituloDescendente().ForEach(l => Console.WriteLine(l.Titulo));
+        foreach (var libro in caso.GetOrdenadosPorTituloDesc())
+        {
+            Console.WriteLine(libro.Titulo);
+        } 
     }
 }
